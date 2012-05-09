@@ -5,7 +5,7 @@ public class Lagerverwaltung {
 	public static void main(String[] args) {
 		Lager l1 = new Lager();
 		Warenkorb w1 = new Warenkorb();
-		Roboter r1 = new Roboter();
+		Roboterverwaltung r1 = new Roboterverwaltung();
 		Lagerverwaltung lager = new Lagerverwaltung();
 		Scanner input = new Scanner(System.in);
 		String ware = "";
@@ -20,7 +20,7 @@ public class Lagerverwaltung {
         System.out.println("\nWelche Anzahl mšchten Sie in den Warenkorb legen?");
         anzahl =  Integer.parseInt(input.nextLine());
         
-        r1.kauf(l1.getLager(), w1.getKorb(), ware, anzahl);
+       r1.delegieren(l1.getLager(), w1.getKorb(), ware, anzahl);
         
         lager.ausgabeLager(l1);
         lager.ausgabeWarenkorb(w1);

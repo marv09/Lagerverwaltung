@@ -9,10 +9,16 @@ public class Roboterverwaltung {
 		}
 	}
 	
-	public void delegieren(){
+	public void delegieren(Vector<Artikel> lager, Vector<Artikel> warenkorb, String ware, int anzahl){
 		boolean zugewiesen = false;
-		while(zugewiesen == false){
-			
+		while(zugewiesen==false){
+			for(int i=0; i<roboterGarage.size(); i++){
+				if(roboterGarage.elementAt(i).getStatus()==false){
+					roboterGarage.elementAt(i).kauf(lager, warenkorb, ware, anzahl);
+					zugewiesen=true;
+					break;
+				}
+			}
 		}
 	}
 }
