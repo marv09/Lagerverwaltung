@@ -20,7 +20,7 @@ import java.util.Vector;
 				kauf();
 			}
 
-	public void kauf(){
+	public synchronized void kauf(){
 		for (int i=0; i<lager.size(); i++){
 			if(lager.elementAt(i).getName().equals(ware)){
 				if(lager.elementAt(i).getMenge()-anzahl<0){
