@@ -13,14 +13,18 @@ public class Lagerverwaltung {
 		lager.ausgabeLager(l1);
 		
 		while(true){
+		boolean vorhanden = false;
 		System.out.println("\nWelchen Artikel mšchten Sie in den Warenkorb legen?");
 		ware = input.nextLine();
 		for(int i = 0; i<l1.getLager().size(); i++){
 			if(l1.getLager().elementAt(i).getName().equals(ware)){
 				System.out.println("\nWelche Anzahl mšchten Sie in den Warenkorb legen?");
 				anzahl =  Integer.parseInt(input.nextLine());
-		        
+		        vorhanden=true;
 				r1.delegieren(l1.getLager(), w1.getKorb(), ware, anzahl);
+			}else if (vorhanden==false) {
+				System.out.println("\nArtikel nicht vorhanden\n");
+				break;
 			}
 		}
 		lager.ausgabeLager(l1);
