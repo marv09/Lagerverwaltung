@@ -1,19 +1,20 @@
 import java.util.Vector;
 
 
-
  class RoboterThread implements Runnable{
 	 
 	 private Vector<Artikel> lager = new Vector<Artikel>();
 	 private Vector<Artikel> warenkorb = new Vector<Artikel>();
 	 private String ware="";
 	 private int anzahl;
+	 private int suchzeit;
 	 
-	 public RoboterThread(Vector<Artikel> lager, Vector<Artikel> warenkorb, String ware, int anzahl){
+	 public RoboterThread(Vector<Artikel> lager, Vector<Artikel> warenkorb, String ware, int anzahl, int suchzeit){
 		 this.lager=lager;
 		 this.warenkorb=warenkorb;
 		 this.ware=ware;
 		 this.anzahl=anzahl;
+		 this.suchzeit=suchzeit;
 	 }
 	
 	public void run(){
@@ -21,6 +22,11 @@ import java.util.Vector;
 			}
 
 	public synchronized void kauf(){
+		try {
+			Thread.sleep(suchzeit);
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}
 		for (int i=0; i<lager.size(); i++){
 			if(lager.elementAt(i).getName().equals(ware)){
 				if(lager.elementAt(i).getMenge()-anzahl<0){

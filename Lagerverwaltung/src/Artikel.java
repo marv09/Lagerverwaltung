@@ -1,10 +1,10 @@
 
 public class Artikel{
 	private String name;
-	private double suchzeit;
+	private int suchzeit;
 	private int menge;
 	
-	public Artikel(String name, double suchzeit, int menge){
+	public Artikel(String name, int suchzeit, int menge){
 		this.name = name;
 		this.suchzeit = suchzeit;
 		this.menge = menge;
@@ -18,11 +18,11 @@ public class Artikel{
 		this.name = name;
 	}
 
-	public double getSuchzeit() {
+	public int getSuchzeit() {
 		return suchzeit;
 	}
 
-	public void setSuchzeit(double suchzeit) {
+	public void setSuchzeit(int suchzeit) {
 		this.suchzeit = suchzeit;
 	}
 
