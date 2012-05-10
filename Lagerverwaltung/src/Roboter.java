@@ -11,14 +11,14 @@ public class Roboter{
 			if(lager.elementAt(i).getName().equals(ware)){
 				if(lager.elementAt(i).getMenge()-anzahl<0){
 					try {
-						throw new Ausverkauft("Ausverkauft oder Bestellmenge zu gro§.\n");
+						throw new Ausverkauft("Ausverkauft oder Bestellmenge zu groß.\n");
 					} catch (Ausverkauft e) {
 						System.out.println(e);
 						break;
 					}
 				}	else{
 					 boolean nochNichtVorhanden = true;
-					Artikel artikel = new Artikel(lager.elementAt(i).getName(), lager.elementAt(i).getSuchzeit(), anzahl); //new Artikel("Wurst", 0.3, anzahl);// 
+					Artikel artikel = new Artikel(lager.elementAt(i).getName(), lager.elementAt(i).getSuchzeit(), anzahl); 
 					lager.elementAt(i).setMenge(lager.elementAt(i).getMenge()-anzahl);
 
 					for (int y=0; y<warenkorb.size(); y++) {

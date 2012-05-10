@@ -23,14 +23,11 @@ public class Lagerverwaltung {
 				r1.delegieren(l1.getLager(), w1.getKorb(), ware, anzahl);
 			}
 		}
-		
-		        
-	        lager.ausgabeLager(l1);
-	        lager.ausgabeWarenkorb(w1);
+		lager.ausgabeLager(l1);
+	    lager.ausgabeWarenkorb(w1);
 	}
 }
         
-	
 	public void ausgabeLager(Lager l1){
 		for(int i=0; i<l1.lager.size();i++){
 			System.out.println("Lager	" + l1.lager.elementAt(i).getName() + "   " +l1.lager.elementAt(i).getMenge());	
