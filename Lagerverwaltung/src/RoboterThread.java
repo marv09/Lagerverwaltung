@@ -4,7 +4,7 @@
 
 	
 	public void run() {
-		//hier Šhnlich wie Roboter.kauf(...)
+		//hier Šhnlich wie Roboter.kauf(...).
 		
 	}
 
