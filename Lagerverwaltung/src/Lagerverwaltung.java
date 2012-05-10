@@ -33,13 +33,13 @@ public class Lagerverwaltung {
 	
 	public void ausgabeLager(Lager l1){
 		for(int i=0; i<l1.lager.size();i++){
-			System.out.println("Lager" + l1.lager.elementAt(i).getName() + "   " +l1.lager.elementAt(i).getMenge());	
+			System.out.println("Lager	" + l1.lager.elementAt(i).getName() + "   " +l1.lager.elementAt(i).getMenge());	
 		}
 	}
 	
 	public void ausgabeWarenkorb(Warenkorb w1){
 		for(int i=0; i<w1.korb.size();i++){
-			System.out.println("Korb" + w1.korb.elementAt(i).getName() + "   " +w1.korb.elementAt(i).getMenge());	
+			System.out.println("Korb	" + w1.korb.elementAt(i).getName() + "   " +w1.korb.elementAt(i).getMenge());	
 		}
 	}
 }
