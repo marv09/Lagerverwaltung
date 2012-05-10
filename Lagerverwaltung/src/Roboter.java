@@ -5,8 +5,14 @@ public class Roboter{
 	private boolean beschaeftigt = false;
 	
 	
-	public void kauf(Vector<Artikel> lager, Vector<Artikel> warenkorb, String ware, int anzahl){
+	public void kauf(Vector<Artikel> lager, Vector<Artikel> warenkorb, String ware, int anzahl, int suchzeit){
 	beschaeftigt=true;
+	try {
+		Thread.sleep(suchzeit);
+	} catch (InterruptedException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	}
 		for (int i=0; i<lager.size(); i++){
 			if(lager.elementAt(i).getName().equals(ware)){
 				if(lager.elementAt(i).getMenge()-anzahl<0){
