@@ -21,19 +21,23 @@ public class Lagerverwaltung {
 				System.out.println("\nWelche Anzahl mšchten Sie in den Warenkorb legen?");
 				anzahl =  Integer.parseInt(input.nextLine());
 		        vorhanden=true;
-				r1.delegieren(l1.getLager(), w1.getKorb(), ware, anzahl, l1.getLager().elementAt(i).getSuchzeit());
-		        //RoboterThread rt = new RoboterThread(l1.getLager(), w1.getKorb(), ware, anzahl, l1.getLager().elementAt(i).getSuchzeit());
-		       //Thread t = new Thread(rt);
-		       //t.start();
-			}else if (vorhanden==false) {
-				System.out.println("\nArtikel nicht vorhanden\n");
-				break;
+				//r1.delegieren(l1.getLager(), w1.getKorb(), ware, anzahl, l1.getLager().elementAt(i).getSuchzeit());
+		        RoboterThread rt = new RoboterThread(l1.getLager(), w1.getKorb(), ware, anzahl, l1.getLager().elementAt(i).getSuchzeit());
+		        Thread t = new Thread(rt);
+		       	t.start();
 			}
 		}
+		if (vorhanden==false) {
+			System.out.println("\nArtikel nicht vorhanden\n");
+			break;
+		}
+		
 		lager.ausgabeLager(l1);
 	    lager.ausgabeWarenkorb(w1);
+		
 	}
 }
+
         
 	public void ausgabeLager(Lager l1){
 		for(int i=0; i<l1.lager.size();i++){

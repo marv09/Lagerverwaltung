@@ -56,6 +56,6 @@ import java.util.Vector;
 				}
 			}
 		}
-		System.out.println(warenkorb.toString());
+		System.out.println(warenkorb.toString()); //kann man gucken wie lange der spass dauert
 	}
 }
