@@ -10,22 +10,26 @@ public class Lagerverwaltung {
 		Scanner input = new Scanner(System.in);
 		String ware = "";
 		int anzahl = 0;
-		
 		lager.ausgabeLager(l1);
 		
 		while(true){
 		System.out.println("\nWelchen Artikel mšchten Sie in den Warenkorb legen?");
 		ware = input.nextLine();
-	    
-        System.out.println("\nWelche Anzahl mšchten Sie in den Warenkorb legen?");
-        anzahl =  Integer.parseInt(input.nextLine());
-        
-       r1.delegieren(l1.getLager(), w1.getKorb(), ware, anzahl);
-        
-        lager.ausgabeLager(l1);
-        lager.ausgabeWarenkorb(w1);
+		for(int i = 0; i<l1.getLager().size(); i++){
+			if(l1.getLager().elementAt(i).getName().equals(ware)){
+				System.out.println("\nWelche Anzahl mšchten Sie in den Warenkorb legen?");
+				anzahl =  Integer.parseInt(input.nextLine());
+		        
+				r1.delegieren(l1.getLager(), w1.getKorb(), ware, anzahl);
+			}
 		}
+		
+		        
+	        lager.ausgabeLager(l1);
+	        lager.ausgabeWarenkorb(w1);
 	}
+}
+        
 	
 	public void ausgabeLager(Lager l1){
 		for(int i=0; i<l1.lager.size();i++){
