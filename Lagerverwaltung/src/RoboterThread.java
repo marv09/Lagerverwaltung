@@ -56,5 +56,6 @@ import java.util.Vector;
 				}
 			}
 		}
+		System.out.println(warenkorb.toString());
 	}
 }
