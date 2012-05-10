@@ -28,8 +28,11 @@ public class Lagerverwaltung {
 			}
 		}
 		if (vorhanden==false) {
-			System.out.println("\nArtikel nicht vorhanden\n");
-			break;
+			try {
+				throw new Ausverkauft("\nWare nicht vorhanden.\n");
+			} catch (Ausverkauft e) {
+				System.out.println(e);
+			}
 		}
 		
 		lager.ausgabeLager(l1);
